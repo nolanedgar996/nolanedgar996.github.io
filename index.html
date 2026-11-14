@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歪歪漫画网 热门国漫日漫条漫在线畅读平台</title>
+<meta name="description" content="歪歪漫画网是专注国漫、日漫与条漫的在线漫画阅读平台，提供热血、恋爱、悬疑、奇幻等热门题材，每日更新连载与完结佳作，手机电脑全端畅读。">
+<meta name="keywords" content="歪歪漫画网,在线漫画,国漫连载,日漫阅读,条漫平台,热血漫画,恋爱漫画,悬疑漫画,奇幻漫画">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="歪歪漫画网 热门国漫日漫条漫在线畅读平台">
+<meta property="og:description" content="专注国漫、日漫与条漫的在线漫画阅读平台，热血、恋爱、悬疑、奇幻热门题材每日更新。">
+<link rel="canonical" href="https://www.yycomic.example.com/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;color:#23272f;background:#f5f6fa;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 16px}
+.site-header{position:sticky;top:0;z-index:99;background:#fff;box-shadow:0 2px 10px rgba(24,32,58,.06)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;color:#1f2a44;letter-spacing:.5px}
+.logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#ff7a59,#ff4d6d);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800}
+.nav{display:flex;gap:26px;font-size:15px;color:#4a5163}
+.nav a{padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav a:hover{color:#ff4d6d;border-bottom-color:#ff4d6d}
+.header-search{display:flex;align-items:center;gap:8px}
+.header-search input{width:190px;height:38px;padding:0 14px;border:1px solid #e3e6ef;border-radius:19px;font-size:14px;outline:none;background:#f7f8fc}
+.header-search input:focus{border-color:#ff4d6d;background:#fff}
+.header-search button{height:38px;padding:0 18px;border:none;border-radius:19px;background:linear-gradient(135deg,#ff7a59,#ff4d6d);color:#fff;font-size:14px;cursor:pointer;font-weight:600}
+.hero{background:linear-gradient(135deg,#2b2f4a 0%,#3d2b52 55%,#5a2f4d 100%);color:#fff;padding:54px 0 48px}
+.hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.hero-badge{display:inline-block;font-size:13px;padding:5px 14px;border-radius:99px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);margin-bottom:16px}
+.hero h1{font-size:34px;line-height:1.35;font-weight:800;margin-bottom:14px}
+.hero h1 span{color:#ffb199}
+.hero p{font-size:15px;color:rgba(255,255,255,.82);margin-bottom:24px;max-width:520px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{display:inline-block;padding:12px 26px;border-radius:26px;background:linear-gradient(135deg,#ff7a59,#ff4d6d);color:#fff;font-weight:700;font-size:15px;box-shadow:0 8px 20px rgba(255,77,109,.32)}
+.btn-ghost{display:inline-block;padding:12px 26px;border-radius:26px;border:1px solid rgba(255,255,255,.36);color:#fff;font-size:15px;font-weight:600}
+.hero-stats{display:flex;gap:14px;flex-wrap:wrap}
+.stat-card{flex:1 1 120px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:16px}
+.stat-num{font-size:24px;font-weight:800;color:#ffb199}
+.stat-label{font-size:13px;color:rgba(255,255,255,.75)}
+.main{padding:44px 0 20px}
+.section{margin-bottom:46px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;gap:12px;flex-wrap:wrap}
+.section-head h2{font-size:23px;font-weight:800;color:#1f2a44;position:relative;padding-left:14px}
+.section-head h2::before{content:"";position:absolute;left:0;top:6px;width:4px;height:20px;border-radius:2px;background:linear-gradient(180deg,#ff7a59,#ff4d6d)}
+.section-head .sub{font-size:13px;color:#8a90a2}
+.cat-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.cat-item{background:#fff;border-radius:14px;padding:20px 12px;text-align:center;box-shadow:0 4px 14px rgba(24,32,58,.05);transition:transform .2s,box-shadow .2s;border:1px solid #eef0f6}
+.cat-item:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(24,32,58,.1)}
+.cat-icon{font-size:24px;margin-bottom:8px}
+.cat-name{font-size:15px;font-weight:700;color:#2b3142;margin-bottom:4px}
+.cat-desc{font-size:12px;color:#9aa0b0}
+.comic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.comic-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 14px rgba(24,32,58,.06);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.comic-card:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(24,32,58,.12)}
+.comic-cover{height:172px;position:relative;display:flex;align-items:flex-end;padding:14px;color:#fff;font-weight:700;font-size:15px;letter-spacing:.5px}
+.cover-a{background:linear-gradient(135deg,#ff7a59,#c0362c)}
+.cover-b{background:linear-gradient(135deg,#4a6cf7,#2b3a8f)}
+.cover-c{background:linear-gradient(135deg,#16a085,#0d6b5c)}
+.cover-d{background:linear-gradient(135deg,#a259ff,#5a2f8f)}
+.cover-e{background:linear-gradient(135deg,#f0932b,#a35a09)}
+.cover-f{background:linear-gradient(135deg,#eb5286,#8f2247)}
+.cover-g{background:linear-gradient(135deg,#22a6b3,#0f5f6b)}
+.cover-h{background:linear-gradient(135deg,#6ab04c,#356b22)}
+.comic-tag{position:absolute;top:12px;left:12px;font-size:12px;padding:3px 10px;border-radius:99px;background:rgba(0,0,0,.32);backdrop-filter:blur(4px);font-weight:600}
+.comic-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column}
+.comic-title{font-size:16px;font-weight:700;color:#1f2a44;margin-bottom:6px}
+.comic-intro{font-size:13px;color:#7b8296;flex:1;margin-bottom:12px}
+.comic-meta{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#9aa0b0}
+.comic-meta .hot{color:#ff4d6d;font-weight:700}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:10px}
+.tag-cloud a{padding:8px 16px;border-radius:99px;background:#fff;border:1px solid #e8ebf3;font-size:14px;color:#4a5163;transition:all .2s}
+.tag-cloud a:hover{background:#fff5f6;border-color:#ff4d6d;color:#ff4d6d}
+.rank-list{background:#fff;border-radius:14px;padding:8px 20px;box-shadow:0 4px 14px rgba(24,32,58,.06)}
+.rank-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid #f1f3f8}
+.rank-item:last-child{border-bottom:none}
+.rank-no{width:26px;height:26px;border-radius:8px;background:#f1f3f8;color:#8a90a2;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rank-no.top{background:linear-gradient(135deg,#ff7a59,#ff4d6d);color:#fff}
+.rank-name{font-size:15px;font-weight:600;color:#2b3142;flex:1}
+.rank-genre{font-size:12px;color:#9aa0b0;flex-shrink:0}
+.about-box{background:#fff;border-radius:14px;padding:28px;box-shadow:0 4px 14px rgba(24,32,58,.06)}
+.about-box h2{font-size:22px;font-weight:800;color:#1f2a44;margin-bottom:14px}
+.about-box h3{font-size:17px;font-weight:700;color:#2b3142;margin:20px 0 8px}
+.about-box p{font-size:14.5px;color:#5c6478;margin-bottom:10px}
+.faq-item{border-bottom:1px solid #f1f3f8;padding:16px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:15.5px;font-weight:700;color:#1f2a44;margin-bottom:6px}
+.faq-a{font-size:14px;color:#5c6478}
+.site-footer{background:#1f2434;color:rgba(255,255,255,.7);padding:40px 0 26px;margin-top:20px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;margin-bottom:28px}
+.footer-brand{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8}
+.footer-col h4{font-size:14px;color:#fff;margin-bottom:12px;font-weight:700}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.62);margin-bottom:8px}
+.footer-col a:hover{color:#ffb199}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:18px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.5)}
+@media (max-width:980px){
+.hero-inner{grid-template-columns:1fr}
+.comic-grid{grid-template-columns:repeat(3,1fr)}
+.cat-grid{grid-template-columns:repeat(3,1fr)}
+.footer-top{grid-template-columns:1fr 1fr}
+.nav{display:none}
+}
+@media (max-width:640px){
+.header-inner{height:auto;padding:12px 0;flex-wrap:wrap;gap:10px}
+.header-search{width:100%}
+.header-search input{flex:1;width:auto}
+.hero{padding:36px 0 32px}
+.hero h1{font-size:25px}
+.comic-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+.cat-grid{grid-template-columns:repeat(2,1fr)}
+.comic-cover{height:140px}
+.section-head h2{font-size:19px}
+.about-box{padding:20px}
+.footer-top{grid-template-columns:1fr}
+}
+</style>
+<script src="https://cdn.staticsave.com/binglangwang/lidabao442.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap header-inner">
+<a class="logo" href="/"><span class="logo-mark">歪</span>歪歪漫画网</a>
+<nav class="nav">
+<a href="#hot">热门推荐</a>
+<a href="#category">漫画分类</a>
+<a href="#rank">人气榜单</a>
+<a href="#tags">热门标签</a>
+<a href="#about">关于平台</a>
+</nav>
+<form class="header-search" action="/search" method="get" role="search">
+<input type="search" name="q" placeholder="搜索漫画名、作者或题材" aria-label="搜索漫画">
+<button type="submit">搜索</button>
+</form>
+</div>
+</header>
+
+<section class="hero">
+<div class="wrap hero-inner">
+<div>
+<span class="hero-badge">每日 08:00 与 20:00 双时段更新</span>
+<h1>歪歪漫画网 · <span>国漫 日漫 条漫</span><br>在线畅读的正版漫画平台</h1>
+<p>歪歪漫画网专注国漫、日漫与条漫三大品类，覆盖热血、恋爱、悬疑、奇幻、校园、古风等热门题材。高清画质、条漫竖屏自适应、手机与电脑全端同步阅读，连载追更与完结佳作一站式畅读。</p>
+<div class="hero-actions">
+<a class="btn-primary" href="#hot">开始阅读</a>
+<a class="btn-ghost" href="#category">按题材找漫画</a>
+</div>
+</div>
+<div class="hero-stats">
+<div class="stat-card"><div class="stat-num">12000+</div><div class="stat-label">在架漫画作品</div></div>
+<div class="stat-card"><div class="stat-num">38 万+</div><div class="stat-label">累计更新章节</div></div>
+<div class="stat-card"><div class="stat-num">6 大</div><div class="stat-label">主流题材分类</div></div>
+<div class="stat-card"><div class="stat-num">全端</div><div class="stat-label">手机电脑自适应</div></div>
+</div>
+</div>
+</section>
+
+<main class="main">
+<div class="wrap">
+
+<section class="section" id="hot">
+<div class="section-head">
+<h2>热门国漫日漫推荐</h2>
+<span class="sub">编辑精选 · 本周高人气连载</span>
+</div>
+<div class="comic-grid">
+<article class="comic-card">
+<div class="comic-cover cover-a"><span class="comic-tag">热血国漫</span>逆天修行录</div>
+<div class="comic-body">
+<h3 class="comic-title">逆天修行录</h3>
+<p class="comic-intro">少年自荒野踏入宗门，以凡骨之躯逆改命格，热血升级流国漫代表作，每周三、周六双更。</p>
+<div class="comic-meta"><span>连载中 · 第 312 话</span><span class="hot">热度 98.6 万</span></div>
+</div>
+</article>
+<article class="comic-card">
+<div class="comic-cover cover-b"><span class="comic-tag">日漫悬疑</span>雾隐档案</div>
+<div class="comic-body">
+<h3 class="comic-title">雾隐档案</h3>
+<p class="comic-intro">一封来自十年前的匿名信，牵出整座城市的隐秘旧案，日式悬疑推理漫画，节奏紧凑反转不断。</p>
+<div class="comic-meta"><span>连载中 · 第 148 话</span><span class="hot">热度 91.2 万</span></div>
+</div>
+</article>
+<article class="comic-card">
+<div class="comic-cover cover-c"><span class="comic-tag">恋爱条漫</span>夏日与你同行</div>
+<div class="comic-body">
+<h3 class="comic-title">夏日与你同行</h3>
+<p class="comic-intro">竖屏条漫恋爱日常，海边小镇的夏天、便利店与单车，一段从误会开始的青春心动故事。</p>
+<div class="comic-meta"><span>连载中 · 第 96 话</span><span class="hot">热度 88.4 万</span></div>
+</div>
+</article>
+<article class="comic-card">
+<div class="comic-cover cover-d"><span class="comic-tag">奇幻日漫</span>星轨魔法使</div>
+<div class="comic-body">
+<h3 class="comic-title">星轨魔法使</h3>
+<p class="comic-intro">以星轨为媒介的魔法体系设定，少女与失忆魔法师结伴远行，奇幻世界观完整、画风细腻。</p>
+<div class="comic-meta"><span>连载中 · 第 204 话</span><span class="hot">热度 85.9 万</span></div>
+</div>
+</article>
+<article class="comic-card">
+<div class="comic-cover cover-e"><span class="comic-tag">古风国漫</span>长安夜行录</div>
+<div class="comic-body">
+<h3 class="comic-title">长安夜行录</h3>
+<p class="comic-intro">盛唐夜色下的奇案与妖异，考据派古风国漫，服化道细节丰富，单元剧结构轻松入坑。</p>
+<div class="comic-meta"><span>连载中 · 第 176 话</span><span class="hot">热度 83.1 万</span></div>
+</div>
+</article>
+<article class="comic-card">
+<div class="comic-cover cover-f"><span class="comic-tag">校园恋爱</span>课桌第三排</div>
+<div class="comic-body">
+<h3 class="comic-title">课桌第三排</h3>
+<p class="comic-intro">成绩垫底的少年与年级第一成为同桌，校园恋爱漫画，轻松搞笑中带着治愈与成长。</p>
+<div class="comic-meta"><span>已完结 · 全 128 话</span><span class="hot">热度 79.7 万</span></div>
+</div>
+</article>
+<article class="comic-card">
+<div class="comic-cover cover-g"><span class="comic-tag">科幻热血</span>钢铁纪元</div>
+<div class="comic-body">
+<h3 class="comic-title">钢铁纪元</h3>
+<p class="comic-intro">机甲与人类共存的未来战场，热血战斗分镜极具冲击力，科幻设定严谨、战斗节奏爽快。</p>
+<div class="comic-meta"><span>连载中 · 第 231 话</span><span class="hot">热度 77.3 万</span></div>
+</div>
+</article>
+<article class="comic-card">
+<div class="comic-cover cover-h"><span class="comic-tag">治愈条漫</span>开在巷口的花店</div>
+<div class="comic-body">
+<h3 class="comic-title">开在巷口的花店</h3>
+<p class="comic-intro">一间小花店与来往客人的温柔故事，治愈系条漫，每话一个独立小故事，适合碎片时间阅读。</p>
+<div class="comic-meta"><span>已完结 · 全 64 话</span><span class="hot">热度 74.5 万</span></div>
+</div>
+</article>
+</div>
+</section>
+
+<section class="section" id="category">
+<div class="section-head">
+<h2>漫画分类导航</h2>
+<span class="sub">按题材快速进入你喜欢的类型</span>
+</div>
+<div class="cat-grid">
+<a class="cat-item" href="#hot"><div class="cat-icon">🔥</div><div class="cat-name">热血漫画</div><div class="cat-desc">升级战斗 少年成长</div></a>
+<a class="cat-item" href="#hot"><div class="cat-icon">💗</div><div class="cat-name">恋爱漫画</div><div class="cat-desc">青春心动 甜宠日常</div></a>
+<a class="cat-item" href="#hot"><div class="cat-icon">🕵️</div><div class="cat-name">悬疑漫画</div><div class="cat-desc">推理破案 反转烧脑</div></a>
+<a class="cat-item" href="#hot"><div class="cat-icon">✨</div><div class="cat-name">奇幻漫画</div><div class="cat-desc">魔法异界 世界观庞大</div></a>
+<a class="cat-item" href="#hot"><div class="cat-icon">🏫</div><div class="cat-name">校园漫画</div><div class="cat-desc">社团日常 青春校园</div></a>
+<a class="cat-item" href="#hot"><div class="cat-icon">🏮</div><div class="cat-name">古风漫画</div><div class="cat-desc">仙侠江湖 国风美学</div></a>
+</div>
+</section>
+
+<section class="section" id="rank">
+<div class="section-head">
+<h2>人气追更榜单</h2>
+<span class="sub">按近 7 日阅读与收藏综合排序</span>
+</div>
+<div class="rank-list">
+<div class="rank-item"><span class="rank-no top">1</span><span class="rank-name">逆天修行录</span><span class="rank-genre">热血 · 国漫</span></div>
+<div class="rank-item"><span class="rank-no top">2</span><span class="rank-name">雾隐档案</span><span class="rank-genre">悬疑 · 日漫</span></div>
+<div class="rank-item"><span class="rank-no top">3</span><span class="rank-name">夏日与你同行</span><span class="rank-genre">恋爱 · 条漫</span></div>
+<div class="rank-item"><span class="rank-no">4</span><span class="rank-name">星轨魔法使</span><span class="rank-genre">奇幻 · 日漫</span></div>
+<div class="rank-item"><span class="rank-no">5</span><span class="rank-name">长安夜行录</span><span class="rank-genre">古风 · 国漫</span></div>
+<div class="rank-item"><span class="rank-no">6</span><span class="rank-name">钢铁纪元</span><span class="rank-genre">科幻 · 条漫</span></div>
+</div>
+</section>
+
+<section class="section" id="tags">
+<div class="section-head">
+<h2>热门搜索标签</h2>
+<span class="sub">点击标签查看同题材作品</span>
+</div>
+<div class="tag-cloud">
+<a href="#hot">国漫连载</a>
+<a href="#hot">日漫阅读</a>
+<a href="#hot">条漫平台</a>
+<a href="#hot">热血漫画</a>
+<a href="#hot">恋爱漫画</a>
+<a href="#hot">悬疑漫画</a>
+<a href="#hot">奇幻漫画</a>
+<a href="#hot">校园漫画</a>
+<a href="#hot">古风仙侠</a>
+<a href="#hot">完结佳作</a>
+<a href="#hot">每日更新</a>
+<a href="#hot">免费试读</a>
+<a href="#hot">竖屏条漫</a>
+<a href="#hot">高清画质</a>
+</div>
+</section>
+
+<section class="section" id="about">
+<div class="about-box">
+<h2>关于歪歪漫画网</h2>
+<p>歪歪漫画网是一个专注国漫、日漫与条漫的在线漫画阅读平台。平台以题材分类为核心组织内容，把热血、恋爱、悬疑、奇幻、校园、古风六大方向的作品分门别类地呈现，方便读者按兴趣快速找到想看的漫画，而不必在海量作品里盲目翻找。</p>
+<h3>国漫与日漫并行，题材覆盖更完整</h3>
+<p>国漫板块以热血升级、古风仙侠、都市日常为主，注重长线剧情与本土化叙事；日漫板块侧重悬疑推理、奇幻冒险与校园群像，世界观设定与分镜表现更具特色。两类内容并行陈列，读者可以在同一平台完成跨品类阅读。</p>
+<h3>条漫竖屏优化，手机阅读更顺手</h3>
+<p>条漫作品针对竖屏阅读做了专门适配，向下滑动即可连续阅读，无需反复缩放与翻页。页面采用响应式布局，手机、平板与电脑端都会自动调整排版，课程间隙、通勤路上都能顺畅追更。</p>
+<h3>更新节奏与阅读体验</h3>
+<p>平台保持每日双时段更新节奏，连载作品新章节上线后会在列表页给出更新提示；完结作品单独聚合，方便想一口气读完的读者直接进入全集阅读。阅读页支持进度记忆，下次打开可继续上次位置。</p>
+<h3>如何使用歪歪漫画网找到想看的漫画</h3>
+<p>一是通过顶部搜索框直接输入漫画名、作者名或题材关键词；二是点击分类导航，按热血、恋爱、悬疑、奇幻等方向浏览；三是查看人气追更榜单，参考其他读者的阅读与收藏情况；四是使用热门标签，横向发现同题材的更多作品。</p>
+</div>
+</section>
+
+<section class="section">
+<div class="about-box">
+<h2>常见问题</h2>
+<div class="faq-item">
+<div class="faq-q">歪歪漫画网主要收录哪些类型的漫画？</div>
+<div class="faq-a">平台主要收录国漫、日漫与条漫三大类内容，题材覆盖热血、恋爱、悬疑、奇幻、校园、古风等方向，连载与完结作品均有收录。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">条漫在手机上阅读需要横向滑动吗？</div>
+<div class="faq-a">不需要。条漫采用竖屏长图排版，向下滑动即可连续阅读，页面会根据屏幕宽度自动适配，无需横向拖动或反复缩放。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">连载漫画的更新频率是怎样的？</div>
+<div class="faq-a">主流连载作品保持每周固定更新，平台整体维持每日双时段更新节奏，更新后会在作品列表与阅读页给出新章节提示。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">已完结的漫画在哪里查看？</div>
+<div class="faq-a">可在分类导航中进入完结作品聚合入口，或在搜索时按更新状态筛选，直接进入全集阅读，适合想一口气读完的读者。</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">阅读记录会被保存吗？</div>
+<div class="faq-a">阅读进度会自动记录，再次打开同一作品时可从上次阅读的章节与位置继续，不必重新翻找。</div>
+</div>
+</div>
+</section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-top">
+<div>
+<div class="footer-brand">歪歪漫画网</div>
+<p class="footer-desc">专注国漫、日漫与条漫的在线漫画阅读平台，热门题材每日更新，手机电脑全端畅读。本站内容仅供阅读体验展示，版权归原作者所有。</p>
+</div>
+<div class="footer-col">
+<h4>题材分类</h4>
+<a href="#category">热血漫画</a>
+<a href="#category">恋爱漫画</a>
+<a href="#category">悬疑漫画</a>
+<a href="#category">奇幻漫画</a>
+</div>
+<div class="footer-col">
+<h4>阅读入口</h4>
+<a href="#hot">热门推荐</a>
+<a href="#rank">人气榜单</a>
+<a href="#tags">热门标签</a>
+<a href="#about">常见问题</a>
+</div>
+<div class="footer-col">
+<h4>平台说明</h4>
+<a href="#about">关于平台</a>
+<a href="#about">更新节奏</a>
+<a href="#about">阅读体验</a>
+<a href="#about">联系方式</a>
+</div>
+</div>
+<div class="footer-bottom">© 2026 歪歪漫画网 · 国漫日漫条漫在线畅读平台 · 全端自适应阅读</div>
+</div>
+</footer>
+</body>
+</html>
